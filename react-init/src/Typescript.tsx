@@ -43,16 +43,63 @@ export default function Typescript() {
     }
   }
   // ! 2. interface
+  interface Object2 {
+    name: string;
+    age: number;
+  }
   // ! 3. type
+  type Object3 = {
+    name: string,
+    age: number
+  }
 
-  let object2: Object1 = {
-    nmae: '김길동',
+  let object2: Object3 = {
+    name: '김길동',
     age: 20
   };
 
+  interface Object4 {
+    telNumber: string;
+    address?: string;
+    getName: () => string;
+  }
+
+  const object3: Object2 & Object4 = {
+    name: '김길동',
+    age: 20,
+    telNumber: '1234',
+    address: 'qwe',
+    getName: () => {
+      return '김길동';
+    }
+  };
+
+  // const name = object3.name;
+  // const age = object3.age;
+  // const telNumber = object3.telNumber;
+
+  const { name, age, ...other } = object3;
+  // other: {
+  //   telNumber: '1234',
+  //   address: 'qwe'
+  // }
+
+  let object4: any; 
+
+  object4 = { other, birth: '1993' };
+  object4 = { ...other, birth: '1993' };
+
+  function fun1(): string {
+    return 'a';
+  }
+
+  let func2: () => string = (): string => {
+    return 'a';
+  }
+  
   object2.name;
 
   return (
-    <div>Typescript</div>
+    <div>{name}</div>
   )
 }
