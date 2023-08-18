@@ -96,6 +96,9 @@ export default function Typescript() {
   let func2: () => string = (): string => {
     return 'a';
   }
+
+  const array = [1, 2, 3, 4];
+  const [first, seconds, ...others] = array;
   
   object2.name;
 
