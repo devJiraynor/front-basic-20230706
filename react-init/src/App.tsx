@@ -4,13 +4,14 @@ import Typescript from './Typescript';
 import Component from './components/Component';
 
 function App() {
+
+  const flag = 1;
+
   return (
     <div>
-      {
-        mock.map(
-          (item) => { return (<Component title={item.title} content={item.content} />) }
-        )
-      }
+      {mock.map((item) => (<Component title={item.title} content={item.content} />))}
+      { flag > 1 && (<h1>true</h1>) }
+      { flag > 1 ? (<h1>true</h1>) : (<h1>false</h1>) }
     </div>
   );
 }
