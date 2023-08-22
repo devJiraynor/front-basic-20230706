@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../layout/Header'
-import Footer from '../../layout/Footer'
+import Footer from 'layout/Footer';
 
 interface Props {
   setPage: React.Dispatch<React.SetStateAction<"sub" | "main">>
@@ -13,10 +13,6 @@ export default function Main({ setPage }: Props) {
   }
 
   return (
-    <div>
-      <Header />
-      <div onClick={onClickHandler} style={{ height: '600px', backgroundColor: 'rgba(255, 0, 255, 0.5)' }}>Main</div>
-      <Footer />
-    </div>
+    <div onClick={onClickHandler} style={{ height: '600px', backgroundColor: 'rgba(255, 0, 255, 0.5)' }}>Main</div>
   )
 }
